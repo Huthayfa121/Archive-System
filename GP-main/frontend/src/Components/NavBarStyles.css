@@ -1,0 +1,136 @@
+.NavBarItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 0 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent for better visibility */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+    width: 99%;
+    height: 80px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0; /* Fixes at the top of the viewport */
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100; /* High z-index to stay above the news images */
+}
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    justify-self: start;   
+}
+
+.logo img{
+    height: 40px;
+    margin-left: 10px;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-gap: 10px;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    justify-content: end;
+
+}
+
+.nav-Links{
+    text-decoration: none;
+    color: black;
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+}
+
+.nav-Links i{
+    padding-right: 10px;
+}
+
+.nav-Links:hover{
+    background: linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 255, 0));
+    /*background-color:  #004d00;*/
+    border-radius: 7px;
+    color: red;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-Links-mobile{
+    padding: 0.7rem 1.1rem;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 3px solid black;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+}
+.nav-Links-mobile:hover{
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 7px;
+    color: white;
+    
+}
+
+.fa-bars,
+.fa-times{
+    color: black;
+
+}
+
+.menu-icons{
+    display: none;
+}
+
+
+@media screen and (max-width: 760px) {
+    .NavBarItems{
+        z-index: 99;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(4px);
+        border-radius: 13px;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: -110%;
+        align-items: stretch;
+        padding: 88px 0 30px 0;
+        margin: 0;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-menu.active{
+        left: 0%;
+    }
+    .menu-icons{
+    display: block;
+    }
+
+    .nav-Links-mobile,
+    .nav-Links{
+        padding: 1rem;
+        display: block;
+        text-align: center;
+        font-size: 1.3rem;
+        width: 30%;
+        margin: auto;
+        
+    }
+
+    .nav-Links:hover,
+    .nav-Links-mobile:hover{
+    width: 50%;
+    }
+
+}
